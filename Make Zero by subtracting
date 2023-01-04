@@ -13,3 +13,7 @@ public:
         
     }
 };
+
+
+// Find no. of unique elements except zero. You require only these many operations.
+// So, the ans is no. of unique elements except zeroes.
