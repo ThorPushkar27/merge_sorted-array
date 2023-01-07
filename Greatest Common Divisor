@@ -1,0 +1,11 @@
+// Simple O(n) approach
+
+int Solution::gcd(int A, int B) {
+    int ans;
+    if(A==0 || B==0) return A;  // Ye jabardasti ka testcase.
+    for(int i= min(A,B); i>=0; i--){
+        if(A%i==0 && B%i ==0) return ans=i;
+    }
+    
+    
+}
