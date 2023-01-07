@@ -1,0 +1,17 @@
+// Simple approach find number of 5 in the number greater than or equal to 5
+
+class Solution {
+public:
+    int trailingZeroes(int n) {
+        int ans=0;
+        if(n<5) return ans;
+        else{
+            while(n!=0){
+               ans+=n/5;
+               n=n/5;
+            }
+        }
+        return ans;
+        
+    }
+};
