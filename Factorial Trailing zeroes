@@ -15,3 +15,18 @@ public:
         
     }
 };
+
+// Simple approach using for loop 
+// ans= n/5+ n/25 +n/125+ n/625 +.....
+
+class Solution {
+public:
+    int trailingZeroes(int n) {
+        int ans=0;
+        for(int i=5; i<=n; i=i*5){
+            ans= ans+ n/i;
+        }
+        return ans;
+        
+    }
+};
