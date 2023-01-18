@@ -1,0 +1,17 @@
+// Kadane'S algorithm.
+//Time Complexity O(N)
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        int CurrSum=0;
+        int Max_Sum= INT_MIN;
+        for(int i =0; i<n; i++){
+            CurrSum = max(CurrSum+nums[i],nums[i]);
+            Max_Sum = max(Max_Sum,CurrSum);
+        }
+        return Max_Sum;
+        
+    }
+};
