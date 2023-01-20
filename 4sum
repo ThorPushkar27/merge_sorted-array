@@ -1,0 +1,53 @@
+//Time Complexity = O(n3)
+//space Complexity = O(1).
+// Runtime Error due to Integer overflow.
+//SEE how I have tackled duplicate cases.
+
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>>ans;
+        sort(nums.begin(),nums.end());
+        int n = nums.size();
+        for(int i =0; i<n; i++){
+            if(i!=0 && nums[i]==nums[i-1]){
+                continue;
+            }
+            for(int j =i+1; j<n; j++){
+                if(j!=i+1 && nums[j]==nums[j-1]){
+                    continue;
+                }
+                long long int a=nums[i]+ nums[j];
+                long long int new_target = (long long int) target - a;
+
+                int s=j+1;
+                int e=n-1;
+                while(s<e){
+                    if(nums[s]+nums[e]<new_target){
+                        s++;
+                    }
+                    else if(nums[s]+nums[e]>new_target){
+                        e--;
+                    }
+                    else{
+                        vector<int>a;
+                        a.push_back(nums[i]);
+                        a.push_back(nums[j]);
+                        a.push_back(nums[s]);
+                        a.push_back(nums[e]);
+                        ans.push_back(a);
+                        s++;
+                        e--;
+                        while(s<e && nums[s]==nums[s-1]) s++;
+                        while(s<e && nums[e]==nums[e+1]) e--;
+                        
+                    }
+                }
+                
+                
+            }
+            
+        }
+        return ans;
+    }
+};
